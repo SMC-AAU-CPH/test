@@ -8,6 +8,9 @@ namespace VRTK
     /// Event Payload
     /// </summary>
     /// <param name="controllerReference">The reference to the controller to perform haptics on.</param>
+    /// 
+
+    
     public struct InteractHapticsEventArgs
     {
         public VRTK_ControllerReference controllerReference;
@@ -24,6 +27,9 @@ namespace VRTK
     /// The Interact Haptics script is attached on the same GameObject as an Interactable Object script and provides controller haptics on touch, grab and use of the object.
     /// </summary>
     [AddComponentMenu("VRTK/Scripts/Interactions/VRTK_InteractHaptics")]
+
+
+
     public class VRTK_InteractHaptics : MonoBehaviour
     {
         [Header("Haptics On Touch")]
@@ -76,13 +82,14 @@ namespace VRTK
         public event InteractHapticsEventHandler InteractHapticsUsed;
 
         protected const float minInterval = 0.05f;
+        
 
         public virtual void OnInteractHapticsTouched(InteractHapticsEventArgs e)
         {
             if (InteractHapticsTouched != null)
             {
                 InteractHapticsTouched(this, e);
-            }
+                           }
         }
 
         public virtual void OnInteractHapticsGrabbed(InteractHapticsEventArgs e)

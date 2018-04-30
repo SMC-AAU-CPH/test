@@ -204,6 +204,7 @@ namespace VRTK
         protected Vector3 previousLocalScale = Vector3.zero;
         protected List<GameObject> currentIgnoredColliders = new List<GameObject>();
         protected bool startDisabled = false;
+       
 
         public virtual void OnInteractableObjectTouched(InteractableObjectEventArgs e)
         {
@@ -211,6 +212,7 @@ namespace VRTK
             {
                 InteractableObjectTouched(this, e);
             }
+
         }
 
         public virtual void OnInteractableObjectUntouched(InteractableObjectEventArgs e)
@@ -227,7 +229,8 @@ namespace VRTK
             {
                 InteractableObjectGrabbed(this, e);
             }
-        }
+
+                   }
 
         public virtual void OnInteractableObjectUngrabbed(InteractableObjectEventArgs e)
         {
@@ -504,7 +507,7 @@ namespace VRTK
                 if (toggle && !IsGrabbed())
                 {
                     objectHighlighter.Highlight(touchHighlightColor);
-                }
+                                    }
                 else
                 {
                     objectHighlighter.Unhighlight();
@@ -512,7 +515,7 @@ namespace VRTK
             }
         }
 
-        /// <summary>
+               /// <summary>
         /// The ResetHighlighter method is used to reset the currently attached highlighter.
         /// </summary>
         public virtual void ResetHighlighter()
