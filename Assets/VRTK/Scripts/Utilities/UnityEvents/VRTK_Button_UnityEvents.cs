@@ -7,7 +7,7 @@
     [AddComponentMenu("VRTK/Scripts/Utilities/Unity Events/VRTK_Button_UnityEvents")]
     public sealed class VRTK_Button_UnityEvents : VRTK_UnityEvents<VRTK_Button>
     {
-        [Serializable]
+                [Serializable]
         public sealed class Button3DEvent : UnityEvent<object, Control3DEventArgs> { }
 
         public Button3DEvent OnPushed = new Button3DEvent();
@@ -28,7 +28,8 @@
         private void Pushed(object o, Control3DEventArgs e)
         {
             OnPushed.Invoke(o, e);
-        }
+            
+                  }
 
         public void Released(object o, Control3DEventArgs e)
         {

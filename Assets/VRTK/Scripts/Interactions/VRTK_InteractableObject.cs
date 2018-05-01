@@ -204,7 +204,9 @@ namespace VRTK
         protected Vector3 previousLocalScale = Vector3.zero;
         protected List<GameObject> currentIgnoredColliders = new List<GameObject>();
         protected bool startDisabled = false;
-       
+        public AudioSource keySound;
+        public float semitone_offset = 0;
+
 
         public virtual void OnInteractableObjectTouched(InteractableObjectEventArgs e)
         {
@@ -314,11 +316,11 @@ namespace VRTK
             if (grabbingObjects.Count > 0 && grabbedBy != null)
             {
                 return (grabbingObjects.Contains(grabbedBy));
-            }
+                       }
             return (grabbingObjects.Count > 0);
-        }
+                                }
 
-        /// <summary>
+           /// <summary>
         /// The IsUsing method is used to determine if the object is currently being used.
         /// </summary>
         /// <param name="usedBy">An optional GameObject to check if the Interactable Object is used by that specific GameObject. Defaults to `null`</param>
@@ -329,14 +331,17 @@ namespace VRTK
             {
                 return (usingObject.gameObject == usedBy);
             }
-            return (usingObject != null);
+            else { return (usingObject != null); }
+
         }
 
-        /// <summary>
-        /// The StartTouching method is called automatically when the object is touched initially. It is also a virtual method to allow for overriding in inherited classes.
-        /// </summary>
-        /// <param name="currentTouchingObject">The object that is currently touching this object.</param>
-        [Obsolete("`VRTK_InteractableObject.StartTouching(GameObject currentTouchingObject)` has been replaced with `VRTK_InteractableObject.StartTouching(VRTK_InteractTouch currentTouchingObject)`. This method will be removed in a future version of VRTK.")]
+            
+
+/// <summary>
+/// The StartTouching method is called automatically when the object is touched initially. It is also a virtual method to allow for overriding in inherited classes.
+/// </summary>
+/// <param name="currentTouchingObject">The object that is currently touching this object.</param>
+[Obsolete("`VRTK_InteractableObject.StartTouching(GameObject currentTouchingObject)` has been replaced with `VRTK_InteractableObject.StartTouching(VRTK_InteractTouch currentTouchingObject)`. This method will be removed in a future version of VRTK.")]
         public virtual void StartTouching(GameObject currentTouchingObject)
         {
             StartTouching((currentTouchingObject != null ? currentTouchingObject.GetComponent<VRTK_InteractTouch>() : null));
@@ -404,6 +409,12 @@ namespace VRTK
         {
             GameObject currentGrabbingGameObject = (currentGrabbingObject != null ? currentGrabbingObject.gameObject : null);
             ToggleEnableState(true);
+            if (gameObject.tag.Equals("key") == true)
+            {
+                keySound.Play();
+
+            }
+
             if (!IsGrabbed() || IsSwappable())
             {
                 PrimaryControllerGrab(currentGrabbingGameObject);
@@ -463,13 +474,15 @@ namespace VRTK
         {
             GameObject currentUsingGameObject = (currentUsingObject != null ? currentUsingObject.gameObject : null);
             ToggleEnableState(true);
+
             if (IsUsing() && !IsUsing(currentUsingGameObject))
             {
                 ResetUsingObject();
+                
             }
             OnInteractableObjectUsed(SetInteractableObjectEvent(currentUsingGameObject));
             usingObject = currentUsingObject;
-        }
+                               }
 
         /// <summary>
         /// The StopUsing method is called automatically when the object has stopped being used. It is also a virtual method to allow for overriding in inherited classes.
@@ -501,7 +514,7 @@ namespace VRTK
         public virtual void ToggleHighlight(bool toggle)
         {
             InitialiseHighlighter();
-
+            
             if (touchHighlightColor != Color.clear && objectHighlighter)
             {
                 if (toggle && !IsGrabbed())
@@ -511,9 +524,11 @@ namespace VRTK
                 else
                 {
                     objectHighlighter.Unhighlight();
-                }
-            }
-        }
+
+                                    }
+                       }
+
+                    }
 
                /// <summary>
         /// The ResetHighlighter method is used to reset the currently attached highlighter.
@@ -526,6 +541,7 @@ namespace VRTK
             }
         }
 
+      
         /// <summary>
         /// The PauseCollisions method temporarily pauses all collisions on the object at grab time by removing the object's rigidbody's ability to detect collisions. This can be useful for preventing clipping when initially grabbing an item.
         /// </summary>
@@ -591,6 +607,8 @@ namespace VRTK
         {
             return (IsGrabbed() ? grabbingObjects[0] : null);
         }
+
+        
 
         /// <summary>
         /// The GetSecondaryGrabbingObject method is used to return the game object that is currently being used to influence this object whilst it is being grabbed by a secondary controller.
@@ -834,6 +852,8 @@ namespace VRTK
                 startDisabled = true;
                 enabled = false;
             }
+
+            keySound = GetComponent<AudioSource>();
         }
 
         protected virtual void OnEnable()
