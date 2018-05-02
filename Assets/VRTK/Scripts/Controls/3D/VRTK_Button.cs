@@ -90,6 +90,7 @@ namespace VRTK
             if (Pushed != null)
             {
                 Pushed(this, e);
+
             }
         }
 
@@ -209,7 +210,7 @@ namespace VRTK
                 buttonJoint.xMotion = ConfigurableJointMotion.Locked;
                 buttonJoint.yMotion = ConfigurableJointMotion.Locked;
                 buttonJoint.zMotion = ConfigurableJointMotion.Locked;
-
+                /* 
                 switch (finalDirection)
                 {
                     case ButtonDirection.x:
@@ -257,7 +258,7 @@ namespace VRTK
                             buttonJoint.zMotion = ConfigurableJointMotion.Limited;
                         }
                         break;
-                }
+                } */
             }
 
             return true;

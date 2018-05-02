@@ -411,6 +411,7 @@ namespace VRTK
             ToggleEnableState(true);
             if (gameObject.tag.Equals("key") == true)
             {
+                keySound.pitch = Mathf.Pow(2f, semitone_offset / 12f);
                 keySound.Play();
 
             }
@@ -528,7 +529,10 @@ namespace VRTK
                                     }
                        }
 
-                    }
+            
+            }
+
+                    
 
                /// <summary>
         /// The ResetHighlighter method is used to reset the currently attached highlighter.
