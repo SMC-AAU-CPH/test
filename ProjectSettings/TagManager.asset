@@ -16,6 +16,7 @@ TagManager:
   - crash2
   - high_hat
   - key
+  - slider
   layers:
   - Default
   - TransparentFX
