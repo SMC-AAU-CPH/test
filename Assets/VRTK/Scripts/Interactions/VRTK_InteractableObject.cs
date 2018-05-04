@@ -416,6 +416,12 @@ namespace VRTK
 
             }
 
+            if (gameObject.tag.Equals("playcowbell") == true)
+            {
+                keySound.Play();
+
+            }
+
             if (!IsGrabbed() || IsSwappable())
             {
                 PrimaryControllerGrab(currentGrabbingGameObject);

@@ -156,11 +156,7 @@ namespace VRTK
                 activationDir = Vector3.zero;
                 return false;
             }
-            if (direction != ButtonDirection.autodetect)
-            {
-                activationDir = CalculateActivationDir();
-            }
-
+          
             if (buttonForce)
             {
                 buttonForce.force = GetForceVector();
@@ -406,76 +402,7 @@ namespace VRTK
             return returnDirection;
         }
 
-        protected virtual Vector3 CalculateActivationDir()
-        {
-            Bounds bounds = VRTK_SharedMethods.GetBounds(transform, transform);
-
-            Vector3 buttonDirection = Vector3.zero;
-            float extents = 0;
-            switch (direction)
-            {
-                case ButtonDirection.x:
-                case ButtonDirection.negX:
-                    if (Mathf.RoundToInt(Mathf.Abs(transform.right.x)) == 1)
-                    {
-                        buttonDirection = transform.right;
-                        extents = bounds.extents.x;
-                    }
-                    else if (Mathf.RoundToInt(Mathf.Abs(transform.up.x)) == 1)
-                    {
-                        buttonDirection = transform.up;
-                        extents = bounds.extents.y;
-                    }
-                    else if (Mathf.RoundToInt(Mathf.Abs(transform.forward.x)) == 1)
-                    {
-                        buttonDirection = transform.forward;
-                        extents = bounds.extents.z;
-                    }
-                    buttonDirection *= (direction == ButtonDirection.x) ? -1 : 1;
-                    break;
-                case ButtonDirection.y:
-                case ButtonDirection.negY:
-                    if (Mathf.RoundToInt(Mathf.Abs(transform.right.y)) == 1)
-                    {
-                        buttonDirection = transform.right;
-                        extents = bounds.extents.x;
-                    }
-                    else if (Mathf.RoundToInt(Mathf.Abs(transform.up.y)) == 1)
-                    {
-                        buttonDirection = transform.up;
-                        extents = bounds.extents.y;
-                    }
-                    else if (Mathf.RoundToInt(Mathf.Abs(transform.forward.y)) == 1)
-                    {
-                        buttonDirection = transform.forward;
-                        extents = bounds.extents.z;
-                    }
-                    buttonDirection *= (direction == ButtonDirection.y) ? -1 : 1;
-                    break;
-                case ButtonDirection.z:
-                case ButtonDirection.negZ:
-                    if (Mathf.RoundToInt(Mathf.Abs(transform.right.z)) == 1)
-                    {
-                        buttonDirection = transform.right;
-                        extents = bounds.extents.x;
-                    }
-                    else if (Mathf.RoundToInt(Mathf.Abs(transform.up.z)) == 1)
-                    {
-                        buttonDirection = transform.up;
-                        extents = bounds.extents.y;
-                    }
-                    else if (Mathf.RoundToInt(Mathf.Abs(transform.forward.z)) == 1)
-                    {
-                        buttonDirection = transform.forward;
-                        extents = bounds.extents.z;
-                    }
-                    buttonDirection *= (direction == ButtonDirection.z) ? -1 : 1;
-                    break;
-            }
-
-            // subtract width of button
-            return (buttonDirection * (extents + activationDistance));
-        }
+ 
 
         protected virtual bool ReachedActivationDistance()
         {

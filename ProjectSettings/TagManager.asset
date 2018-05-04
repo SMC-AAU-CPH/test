@@ -17,6 +17,7 @@ TagManager:
   - high_hat
   - key
   - slider
+  - playcowbell
   layers:
   - Default
   - TransparentFX
