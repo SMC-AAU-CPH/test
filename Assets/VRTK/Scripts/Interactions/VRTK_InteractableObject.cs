@@ -205,6 +205,7 @@ namespace VRTK
         protected List<GameObject> currentIgnoredColliders = new List<GameObject>();
         protected bool startDisabled = false;
         public AudioSource keySound;
+        public AudioSource touchSound;
         public float semitone_offset = 0;
 
 
@@ -416,9 +417,15 @@ namespace VRTK
 
             }
 
-            if (gameObject.tag.Equals("playcowbell") == true)
+            if (gameObject.tag.Equals("TurnOn") == true)
             {
-                keySound.Play();
+                touchSound.Play();
+
+            }
+
+            if (gameObject.tag.Equals("TurnOff") == true)
+            {
+                touchSound.Stop();
 
             }
 
@@ -864,6 +871,7 @@ namespace VRTK
             }
 
             keySound = GetComponent<AudioSource>();
+            touchSound = GetComponentInParent<AudioSource>();
         }
 
         protected virtual void OnEnable()

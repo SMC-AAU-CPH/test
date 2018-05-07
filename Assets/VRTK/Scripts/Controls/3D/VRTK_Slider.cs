@@ -41,6 +41,12 @@ namespace VRTK
         protected Vector3 minimumLimitDiff;
         protected Vector3 maximumLimitDiff;
         protected Vector3 snapPosition;
+        protected AudioSource volumeSound;
+
+        protected void Start() {
+            volumeSound = GetComponentInParent<AudioSource>();
+        
+    }
 
         protected override void OnDrawGizmos()
         {
@@ -276,6 +282,14 @@ namespace VRTK
             ToggleSpring(true);
             sliderJoint.targetPosition = snapPosition * -1f;
             sliderJoint.targetVelocity = Vector3.zero;
+        }
+
+        protected virtual void changeVolume()
+        {
+            if(value == 6.0)
+            {
+                volumeSound.pitch = 2;
+            }
         }
     }
 }
