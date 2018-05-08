@@ -44,20 +44,238 @@ namespace VRTK
 
         protected AudioSource changePitch;
 
+
         private void Start()
         {
             changePitch = GetComponentInParent<AudioSource>();
-        }
+              }
 
         
         void FixedUpdate() {
 
-            if (value == 5)
+            PitchChange();
+            VolumeChange();
+
+        }
+
+        protected void VolumeChange() {
+
+            if (gameObject.tag.Equals("turnVolume") == true && value == 0)
+            {
+                changePitch.volume = 0;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 0.5)
+            {
+                changePitch.volume = 0.05f;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 1)
+            {
+                changePitch.volume = 0.1f;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 1.5)
+            {
+                changePitch.volume = 0.15f;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 2)
+            {
+                changePitch.volume = 0.2f;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 2.5)
+            {
+                changePitch.volume = 0.25f;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 3)
+            {
+                changePitch.volume = 0.3f;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 3.5)
+            {
+                changePitch.volume = 0.35f;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 4)
+            {
+                changePitch.volume = 0.4f;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 4.5)
+            {
+                changePitch.volume = 0.45f;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 5)
+            {
+                changePitch.volume = 0.5f;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 5.5)
+            {
+                changePitch.volume = 0.55f;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 6)
+            {
+                changePitch.volume = 0.6f;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 6.5)
+            {
+                changePitch.volume = 0.65f;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 7)
+            {
+                changePitch.volume = 0.7f;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 7.5)
+            {
+                changePitch.volume = 0.75f;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 8)
+            {
+                changePitch.volume = 0.8f;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 8.5)
+            {
+                changePitch.volume = 0.85f;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 9)
+            {
+                changePitch.volume = 0.9f;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 9.5)
+            {
+                changePitch.volume = 0.95f;
+            }
+
+            else if (gameObject.tag.Equals("turnVolume") == true && value == 10)
+            {
+                changePitch.volume = 1;
+            }
+
+
+        }
+
+        protected void PitchChange()
+        {
+            if (gameObject.tag.Equals("turnPitch") == true && value == 0)
+            {
+                changePitch.pitch = 0.865f;
+            }
+
+            else if (gameObject.tag.Equals("turnPitch") == true && value == 1)
+            {
+                changePitch.pitch = 0.88f;
+            }
+
+            else if (gameObject.tag.Equals("turnPitch") == true && value == 1.5)
+            {
+                changePitch.pitch = 0.895f;
+            }
+
+
+            else if (gameObject.tag.Equals("turnPitch") == true && value == 2)
+            {
+                changePitch.pitch = 0.910f;
+            }
+
+
+            else if (gameObject.tag.Equals("turnPitch") == true && value == 2.5)
+            {
+                changePitch.pitch = 0.925f;
+            }
+
+
+            else if (gameObject.tag.Equals("turnPitch") == true && value == 3)
+            {
+                changePitch.pitch = 0.940f;
+            }
+
+
+            else if (gameObject.tag.Equals("turnPitch") == true && value == 3.5)
+            {
+                changePitch.pitch = 0.955f;
+            }
+
+
+            else if (gameObject.tag.Equals("turnPitch") == true && value == 4)
+            {
+                changePitch.pitch = 0.970f;
+            }
+
+
+            else if (gameObject.tag.Equals("turnPitch") == true && value == 4.5)
+            {
+                changePitch.pitch = 0.985f;
+            }
+
+            else if (gameObject.tag.Equals("turnPitch") == true && value == 5)
             {
                 changePitch.pitch = 1;
             }
-        }
 
+            else if (gameObject.tag.Equals("turnPitch") == true && value == 5.5)
+            {
+                changePitch.pitch = 1.015f;
+            }
+
+            else if (gameObject.tag.Equals("turnPitch") == true && value == 6)
+            {
+                changePitch.pitch = 1.030f;
+            }
+
+            else if (gameObject.tag.Equals("turnPitch") == true && value == 6.5)
+            {
+                changePitch.pitch = 1.045f;
+            }
+
+            else if (gameObject.tag.Equals("turnPitch") == true && value == 7)
+            {
+                changePitch.pitch = 1.060f;
+            }
+
+            else if (gameObject.tag.Equals("turnPitch") == true && value == 7.5)
+            {
+                changePitch.pitch = 1.075f;
+            }
+
+            else if (gameObject.tag.Equals("turnPitch") == true && value == 8)
+            {
+                changePitch.pitch = 1.090f;
+            }
+
+            else if (gameObject.tag.Equals("turnPitch") == true && value == 8.5)
+            {
+                changePitch.pitch = 1.105f;
+            }
+
+            else if (gameObject.tag.Equals("turnPitch") == true && value == 9)
+            {
+                changePitch.pitch = 1.12f;
+            }
+
+            else if (gameObject.tag.Equals("turnPitch") == true && value == 9.5)
+            {
+                changePitch.pitch = 1.135f;
+            }
+
+            else if (gameObject.tag.Equals("turnPitch") == true && value == 10)
+            {
+                changePitch.pitch = 1.15f;
+            }
+        }
 
         protected override void OnDrawGizmos()
         {

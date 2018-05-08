@@ -19,6 +19,8 @@ TagManager:
   - slider
   - TurnOn
   - TurnOff
+  - turnPitch
+  - turnVolume
   layers:
   - Default
   - TransparentFX
