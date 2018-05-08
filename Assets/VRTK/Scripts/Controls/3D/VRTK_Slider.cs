@@ -172,53 +172,53 @@ namespace VRTK
         {
             if (gameObject.tag.Equals("turnPitch") == true && value == 0)
             {
-                changePitch.pitch = 0.865f;
+                changePitch.pitch = 0.919f;
             }
 
             else if (gameObject.tag.Equals("turnPitch") == true && value == 1)
             {
-                changePitch.pitch = 0.88f;
+                changePitch.pitch = 0.928f;
             }
 
             else if (gameObject.tag.Equals("turnPitch") == true && value == 1.5)
             {
-                changePitch.pitch = 0.895f;
+                changePitch.pitch = 0.937f;
             }
 
 
             else if (gameObject.tag.Equals("turnPitch") == true && value == 2)
             {
-                changePitch.pitch = 0.910f;
+                changePitch.pitch = 0.946f;
             }
 
 
             else if (gameObject.tag.Equals("turnPitch") == true && value == 2.5)
             {
-                changePitch.pitch = 0.925f;
+                changePitch.pitch = 0.955f;
             }
 
 
             else if (gameObject.tag.Equals("turnPitch") == true && value == 3)
             {
-                changePitch.pitch = 0.940f;
+                changePitch.pitch = 0.964f;
             }
 
 
             else if (gameObject.tag.Equals("turnPitch") == true && value == 3.5)
             {
-                changePitch.pitch = 0.955f;
+                changePitch.pitch = 0.973f;
             }
 
 
             else if (gameObject.tag.Equals("turnPitch") == true && value == 4)
             {
-                changePitch.pitch = 0.970f;
+                changePitch.pitch = 0.982f;
             }
 
 
             else if (gameObject.tag.Equals("turnPitch") == true && value == 4.5)
             {
-                changePitch.pitch = 0.985f;
+                changePitch.pitch = 0.991f;
             }
 
             else if (gameObject.tag.Equals("turnPitch") == true && value == 5)
@@ -228,52 +228,52 @@ namespace VRTK
 
             else if (gameObject.tag.Equals("turnPitch") == true && value == 5.5)
             {
-                changePitch.pitch = 1.015f;
+                changePitch.pitch = 1.009f;
             }
 
             else if (gameObject.tag.Equals("turnPitch") == true && value == 6)
             {
-                changePitch.pitch = 1.030f;
+                changePitch.pitch = 1.018f;
             }
 
             else if (gameObject.tag.Equals("turnPitch") == true && value == 6.5)
             {
-                changePitch.pitch = 1.045f;
+                changePitch.pitch = 1.027f;
             }
 
             else if (gameObject.tag.Equals("turnPitch") == true && value == 7)
             {
-                changePitch.pitch = 1.060f;
+                changePitch.pitch = 1.036f;
             }
 
             else if (gameObject.tag.Equals("turnPitch") == true && value == 7.5)
             {
-                changePitch.pitch = 1.075f;
+                changePitch.pitch = 1.045f;
             }
 
             else if (gameObject.tag.Equals("turnPitch") == true && value == 8)
             {
-                changePitch.pitch = 1.090f;
+                changePitch.pitch = 1.054f;
             }
 
             else if (gameObject.tag.Equals("turnPitch") == true && value == 8.5)
             {
-                changePitch.pitch = 1.105f;
+                changePitch.pitch = 1.063f;
             }
 
             else if (gameObject.tag.Equals("turnPitch") == true && value == 9)
             {
-                changePitch.pitch = 1.12f;
+                changePitch.pitch = 1.072f;
             }
 
             else if (gameObject.tag.Equals("turnPitch") == true && value == 9.5)
             {
-                changePitch.pitch = 1.135f;
+                changePitch.pitch = 1.081f;
             }
 
             else if (gameObject.tag.Equals("turnPitch") == true && value == 10)
             {
-                changePitch.pitch = 1.15f;
+                changePitch.pitch = 1.090f;
             }
         }
 
