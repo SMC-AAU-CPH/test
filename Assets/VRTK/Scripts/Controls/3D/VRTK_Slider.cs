@@ -1,4 +1,4 @@
-﻿// Slider|Controls3D|100090
+﻿    // Slider|Controls3D|100090
 namespace VRTK
 {
     using UnityEngine;
@@ -41,22 +41,23 @@ namespace VRTK
         protected Vector3 minimumLimitDiff;
         protected Vector3 maximumLimitDiff;
         protected Vector3 snapPosition;
-        protected AudioSource volumeSound;
 
-        void Start() {
-            volumeSound = GetComponentInParent<AudioSource>();
-            
-                   }
+        protected AudioSource changePitch;
 
-
-        void FixedUpdate()
+        private void Start()
         {
-            volumeSound.pitch = 0.5f;
-            if (transform.position.y > 0)
+            changePitch = GetComponentInParent<AudioSource>();
+        }
+
+        
+        void FixedUpdate() {
+
+            if (value == 5)
             {
-                volumeSound.pitch = 2.0f;
+                changePitch.pitch = 1;
             }
         }
+
 
         protected override void OnDrawGizmos()
         {
@@ -169,6 +170,8 @@ namespace VRTK
             {
                 SnapToValue();
             }
+
+            
         }
 
         protected virtual Vector3 CalculateDiff(Vector3 initialPosition, Vector3 givenDirection, float scaleValue, float diffMultiplier, bool addition)
