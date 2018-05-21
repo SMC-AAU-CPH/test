@@ -21,6 +21,7 @@ TagManager:
   - TurnOff
   - turnPitch
   - turnVolume
+  - ride
   layers:
   - Default
   - TransparentFX

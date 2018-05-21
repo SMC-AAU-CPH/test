@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
+
 public class CollisionScript : MonoBehaviour {
     public AudioSource collisionSound;
        
