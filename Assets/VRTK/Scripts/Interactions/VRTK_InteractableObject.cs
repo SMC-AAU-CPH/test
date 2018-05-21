@@ -361,6 +361,12 @@ namespace VRTK
                 if (!touchingObjects.Contains(currentTouchingGameObject))
                 {
                     ToggleEnableState(true);
+					if (gameObject.tag.Equals("key") == true)
+					{
+						keySound.pitch = Mathf.Pow(2f, semitone_offset / 12f);
+						keySound.Play();
+
+					}
                     touchingObjects.Add(currentTouchingGameObject);
                     OnInteractableObjectTouched(SetInteractableObjectEvent(currentTouchingGameObject));
                 }
@@ -410,12 +416,7 @@ namespace VRTK
         {
             GameObject currentGrabbingGameObject = (currentGrabbingObject != null ? currentGrabbingObject.gameObject : null);
             ToggleEnableState(true);
-            if (gameObject.tag.Equals("key") == true)
-            {
-                keySound.pitch = Mathf.Pow(2f, semitone_offset / 12f);
-                keySound.Play();
-
-            }
+            
 
             if (gameObject.tag.Equals("TurnOn") == true)
             {

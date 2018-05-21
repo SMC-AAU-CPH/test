@@ -1,36 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRTK;
 
-public class CollisionScript : MonoBehaviour {
-    public AudioSource collisionSound;
-       
-	// Use this for initialization
-	void Start () {
-        collisionSound = GetComponent<AudioSource>();
+public class drumstick : MonoBehaviour {
+
+	/************************************************************
+     ** Make sure to add rigidbodies to your objects.
+     ** Place this script on your object not object being hit
+     ** this will only work on a Cube being hit 
+     ** it does not consider the direction of the Cube being hit
+     ** remember to name your C# script "GetSideHit"
+     ************************************************************/
+
+	void OnCollisionEnter( Collision collision ){
+
+		Debug.Log( ReturnDirection( collision.gameObject, this.gameObject ) );
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    private void OnCollisionEnter(Collision target)
-    {
-		if (target.gameObject.tag.Equals("drumstick") == true && Mathf.Abs(target.contacts[0].normal.y) > 0.7f)
-        {
-            collisionSound.Play();
-            Debug.Log(Time.time);
-		                                    
-        }
-
-    }
-
-    private void OnCollisionExit(Collision target)
-    {
-        
-    }
 
 	private enum HitDirection { None, Top, Bottom, Forward, Back, Left, Right }
 	private HitDirection ReturnDirection( GameObject Object, GameObject ObjectHit ){
