@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028377, g: 0.22571409, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -31542,7 +31542,7 @@ GameObject:
   - component: {fileID: 845074302}
   m_Layer: 0
   m_Name: CC_Cylindre78
-  m_TagString: drum
+  m_TagString: snare
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38008,6 +38008,92 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.28101635, y: 1.4412689, z: 0.62744427}
   m_Center: {x: -9.443119, y: 78.42548, z: -6.691073}
+--- !u!1 &965939055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100848, guid: 0494030a3b88b0e41a4f81a68d239ce3, type: 3}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 965939056}
+  - component: {fileID: 965939059}
+  - component: {fileID: 965939058}
+  - component: {fileID: 965939057}
+  m_Layer: 0
+  m_Name: pied_crash_Cylindre_2125 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &965939056
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400848, guid: 0494030a3b88b0e41a4f81a68d239ce3, type: 3}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 965939055}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -42.64, y: 61.5, z: -6.9}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_Children: []
+  m_Father: {fileID: 1120486758}
+  m_RootOrder: 828
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!65 &965939057
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 965939055}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 36.880653, y: 16.62194, z: 4.1451454}
+  m_Center: {x: 39.12042, y: 102.08588, z: 9.032947}
+--- !u!23 &965939058
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300848, guid: 0494030a3b88b0e41a4f81a68d239ce3,
+    type: 3}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 965939055}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100848, guid: 0494030a3b88b0e41a4f81a68d239ce3, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &965939059
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300848, guid: 0494030a3b88b0e41a4f81a68d239ce3,
+    type: 3}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 965939055}
+  m_Mesh: {fileID: 4300848, guid: 0494030a3b88b0e41a4f81a68d239ce3, type: 3}
 --- !u!1 &967016678
 GameObject:
   m_ObjectHideFlags: 0
@@ -45169,6 +45255,7 @@ Transform:
   - {fileID: 232867627}
   - {fileID: 2070923810}
   - {fileID: 2007046113}
+  - {fileID: 965939056}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54813,7 +54900,7 @@ GameObject:
   - component: {fileID: 1364206025}
   m_Layer: 0
   m_Name: CollisionDrum
-  m_TagString: Untagged
+  m_TagString: mid_tom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

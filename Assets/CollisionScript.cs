@@ -18,10 +18,10 @@ public class CollisionScript : MonoBehaviour {
 
     private void OnCollisionEnter(Collision target)
     {
-		if (target.gameObject.tag.Equals("drumstick") == true && Mathf.Abs(target.contacts[0].normal.y) > 0.7f)
+		if (target.gameObject.tag.Equals("drumstick") == true && Mathf.Abs(target.contacts[0].normal.y) > 0.3f)
         {
             collisionSound.Play();
-            Debug.Log(Time.time);
+            Debug.Log(gameObject.tag + " " + Time.time);
 		                                    
         }
 
