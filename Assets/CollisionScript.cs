@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
-
 public class CollisionScript : MonoBehaviour {
     public AudioSource collisionSound;
-       
-	// Use this for initialization
-	void Start () {
+
+
+    // Use this for initialization
+    void Start () {
         collisionSound = GetComponent<AudioSource>();
-	}
+      
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,18 +23,25 @@ public class CollisionScript : MonoBehaviour {
 		if (target.gameObject.tag.Equals("drumstick") == true && Mathf.Abs(target.contacts[0].normal.y) > 0.3f)
         {
             collisionSound.Play();
-            Debug.Log(gameObject.tag + " " + Time.time);
-		                                    
+			WriteToLogFile (gameObject.tag + " " + Time.time);
+          Debug.Log(gameObject.tag + " " + Time.time);
+					                                    
         }
 
     }
 
     private void OnCollisionExit(Collision target)
     {
-        
+		
     }
 
-	private enum HitDirection { None, Top, Bottom, Forward, Back, Left, Right }
+	void WriteToLogFile(string message){
+		using (System.IO.StreamWriter logFile = new System.IO.StreamWriter (@"C:\Users\ME-Lab\Desktop\UnityData.txt", true)) {
+			logFile.WriteLine (message);
+		}
+	}
+
+    private enum HitDirection { None, Top, Bottom, Forward, Back, Left, Right }
 	private HitDirection ReturnDirection( GameObject Object, GameObject ObjectHit ){
 
 		HitDirection hitDirection = HitDirection.None;
